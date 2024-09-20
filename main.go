@@ -1,24 +1,14 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/igordonatti/REST-API/controllers"
-	"github.com/igordonatti/REST-API/models"
-	"github.com/joho/godotenv"
+	"github.com/igordonatti/REST-API/startup"
 )
 
 func main() {
-	godotenv.Load()
-
-	handler := controllers.New()
-
-	server := &http.Server{
-		Addr:    "0.0.0.0:8008",
-		Handler: handler,
-	}
-
-	models.ConnectToDatabase()
-
-	server.ListenAndServe()
+	startup.Server()
 }
+
+// To Do
+// Fazer verificação para o não cadastro de dois emails
+// Autenticação
+// Autorização

@@ -20,5 +20,7 @@ func GetDSN() string {
 		os.Getenv("DB_NAME"),
 	)
 
+	print(dsn)
+
 	return dsn
 }

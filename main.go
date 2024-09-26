@@ -12,3 +12,5 @@ func main() {
 // Fazer verificação para o não cadastro de dois emails
 // Autenticação
 // Autorização
+// Corrigir o envio de erro para usuario ja existente
+// Criptografia da senha

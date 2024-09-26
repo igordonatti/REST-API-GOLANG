@@ -1,6 +1,11 @@
 package startup
 
 import (
+	bookModel "github.com/igordonatti/REST-API/api/book/model"
+	postModel "github.com/igordonatti/REST-API/api/post/model"
+	ratingModel "github.com/igordonatti/REST-API/api/rating/model"
+	userModel "github.com/igordonatti/REST-API/api/user/model"
+
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -18,6 +23,8 @@ func Server() {
 	if err != nil {
 		panic("Failed to connect to database.")
 	}
+
+	database.AutoMigrate(&userModel.User{}, &bookModel.Book{}, &ratingModel.Rating{}, &postModel.Post{})
 
 	// Inicializa o Gin
 	router := gin.Default()

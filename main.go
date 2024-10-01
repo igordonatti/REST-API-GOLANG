@@ -14,3 +14,4 @@ func main() {
 // Autorização
 // Corrigir o envio de erro para usuario ja existente
 // Criptografia da senha
+// Busca de livros por string
